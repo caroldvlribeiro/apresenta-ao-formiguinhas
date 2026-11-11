@@ -1,0 +1,192 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      padding: 42px 64px;
+      color: #F9F6EE;
+      background: #00306B;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-family: 'Quicksand', sans-serif;
+    }
+    .slide-heading { flex: 0 0 auto; }
+    .eyebrow {
+      margin-bottom: 5px;
+      color: #00A3E0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h2 {
+      max-width: 1000px;
+      margin-bottom: 7px;
+      color: #F4E01E;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 46px;
+      line-height: 1.08;
+    }
+    .slide-intro {
+      max-width: 950px;
+      color: rgba(249, 246, 238, .88);
+      font-size: 17px;
+      line-height: 1.4;
+    }
+    .content-grid {
+      display: grid;
+      min-height: 0;
+      flex: 1;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .brand-panel,
+    .experience-panel {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 22px;
+      background: rgba(255,255,255,.07);
+    }
+    .brand-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .section-heading {
+      margin-bottom: 12px;
+      color: #F9F6EE;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 23px;
+    }
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .swatch { min-width: 0; }
+    .swatch-color {
+      display: block;
+      height: 56px;
+      margin-bottom: 8px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 11px;
+    }
+    .swatch strong,
+    .swatch code { display: block; }
+    .swatch strong {
+      overflow-wrap: anywhere;
+      color: #F9F6EE;
+      font-size: 12px;
+    }
+    .swatch code {
+      margin-top: 3px;
+      color: #B7DDF2;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 11px;
+    }
+    .typography { min-height: 0; }
+    .font-samples {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .font-card {
+      min-width: 0;
+      padding: 15px;
+      border-radius: 14px;
+      color: #00306B;
+      background: #F9F6EE;
+    }
+    .font-sample {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 35px;
+      line-height: 1;
+    }
+    .font-card--display .font-sample,
+    .font-card--display strong { font-family: 'Fredoka', sans-serif; }
+    .font-card--body .font-sample,
+    .font-card--body strong { font-family: 'Quicksand', sans-serif; }
+    .font-card p {
+      margin-top: 3px;
+      color: #38536F;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .experience-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .site-preview {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(0,163,224,.8);
+      border-radius: 15px;
+      background: #F9F6EE;
+    }
+    .site-preview img {
+      display: block;
+      width: 100%;
+      height: 205px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .site-preview figcaption {
+      padding: 8px 12px;
+      color: #00306B;
+      background: #F9F6EE;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .ux-list {
+      display: grid;
+      flex: 1;
+      grid-template-columns: 1fr;
+      gap: 9px;
+    }
+    .ux-card {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      border-left: 4px solid #00A3E0;
+      border-radius: 10px;
+      background: #0058B9;
+    }
+    .ux-number {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      place-items: center;
+      border-radius: 50%;
+      color: #00306B;
+      background: #F4E01E;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .ux-card strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #F4E01E;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 16px;
+    }
+    .ux-card p {
+      color: #FFFFFF;
+      font-size: 12px;
+      line-height: 1.3;
+    }
+    @media (max-width: 900px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .slide-container { height: auto; min-height: 100vh; }
+      .site-preview img { height: auto; aspect-ratio: 16 / 8; }
+    }
+    @media (max-width: 560px) {
+      .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .font-samples { grid-template-columns: 1fr; }
+    }
+  

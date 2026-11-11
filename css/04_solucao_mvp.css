@@ -1,0 +1,60 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      background: #00306B;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Quicksand', sans-serif;
+      padding: 38px 64px;
+    }
+    h2 {
+      width: 100%;
+      text-align: center;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 44px;
+      color: #F4E01E;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+    .panel-label { font-size: 21px; font-weight: 700; color: #FFFFFF; margin-bottom: 12px; text-align: center; }
+    .management-image {
+      display: block;
+      width: min(1090px, 100%);
+      height: 330px;
+      object-fit: contain;
+      object-position: center;
+      background: transparent;
+      border: 0;
+      border-radius: 8px;
+    }
+    .caption { margin-top: 9px; font-size: 17px; color: #FFFFFF; text-align: center; }
+    .modules-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 24px;
+      color: #00A3E0;
+      margin-top: 18px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .modules {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 14px 16px;
+    }
+    .module {
+      background: #0058B9;
+      color: #FFFFFF;
+      border-left: 6px solid #F4E01E;
+      border-radius: 28px;
+      padding: 12px 22px;
+      font-size: 19px;
+      font-weight: 700;
+      text-align: center;
+    }
+  

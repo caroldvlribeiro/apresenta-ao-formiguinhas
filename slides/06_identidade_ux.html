@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      padding: 42px 64px;
+      color: #F9F6EE;
+      background: #00306B;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-family: 'Quicksand', sans-serif;
+    }
+    .slide-heading { flex: 0 0 auto; }
+    .eyebrow {
+      margin-bottom: 5px;
+      color: #00A3E0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h2 {
+      max-width: 1000px;
+      margin-bottom: 7px;
+      color: #F4E01E;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 46px;
+      line-height: 1.08;
+    }
+    .slide-intro {
+      max-width: 950px;
+      color: rgba(249, 246, 238, .88);
+      font-size: 17px;
+      line-height: 1.4;
+    }
+    .content-grid {
+      display: grid;
+      min-height: 0;
+      flex: 1;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .brand-panel,
+    .experience-panel {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 22px;
+      background: rgba(255,255,255,.07);
+    }
+    .brand-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .section-heading {
+      margin-bottom: 12px;
+      color: #F9F6EE;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 23px;
+    }
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .swatch { min-width: 0; }
+    .swatch-color {
+      display: block;
+      height: 56px;
+      margin-bottom: 8px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 11px;
+    }
+    .swatch strong,
+    .swatch code { display: block; }
+    .swatch strong {
+      overflow-wrap: anywhere;
+      color: #F9F6EE;
+      font-size: 12px;
+    }
+    .swatch code {
+      margin-top: 3px;
+      color: #B7DDF2;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 11px;
+    }
+    .typography { min-height: 0; }
+    .font-samples {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .font-card {
+      min-width: 0;
+      padding: 15px;
+      border-radius: 14px;
+      color: #00306B;
+      background: #F9F6EE;
+    }
+    .font-sample {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 35px;
+      line-height: 1;
+    }
+    .font-card--display .font-sample,
+    .font-card--display strong { font-family: 'Fredoka', sans-serif; }
+    .font-card--body .font-sample,
+    .font-card--body strong { font-family: 'Quicksand', sans-serif; }
+    .font-card p {
+      margin-top: 3px;
+      color: #38536F;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .experience-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .site-preview {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(0,163,224,.8);
+      border-radius: 15px;
+      background: #F9F6EE;
+    }
+    .site-preview img {
+      display: block;
+      width: 100%;
+      height: 205px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .site-preview figcaption {
+      padding: 8px 12px;
+      color: #00306B;
+      background: #F9F6EE;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .ux-list {
+      display: grid;
+      flex: 1;
+      grid-template-columns: 1fr;
+      gap: 9px;
+    }
+    .ux-card {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      border-left: 4px solid #00A3E0;
+      border-radius: 10px;
+      background: #0058B9;
+    }
+    .ux-number {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      place-items: center;
+      border-radius: 50%;
+      color: #00306B;
+      background: #F4E01E;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .ux-card strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #F4E01E;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 16px;
+    }
+    .ux-card p {
+      color: #FFFFFF;
+      font-size: 12px;
+      line-height: 1.3;
+    }
+    @media (max-width: 900px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .slide-container { height: auto; min-height: 100vh; }
+      .site-preview img { height: auto; aspect-ratio: 16 / 8; }
+    }
+    @media (max-width: 560px) {
+      .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .font-samples { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link href="../css/navegacao.css" rel="stylesheet">
+  <link href="../css/apresentacao-responsiva.css" rel="stylesheet">
+</head>
+<body>
+  <div class="slide-container">
+    <header class="slide-heading">
+      <p class="eyebrow">Identidade visual · IHC</p>
+      <h2>Uma identidade que facilita a participação</h2>
+      <p class="slide-intro">Cores, tipografia e componentes trabalham juntos para tornar o site da ONG reconhecível, acolhedor e simples de usar.</p>
+    </header>
+    <div class="content-grid">
+      <section class="brand-panel" aria-label="Elementos da identidade visual">
+        <div>
+          <h3 class="section-heading">Paleta com função</h3>
+          <div class="swatches">
+            <div class="swatch"><span class="swatch-color" style="background:#0058B9"></span><strong>Azul</strong><code>#0058B9</code></div>
+            <div class="swatch"><span class="swatch-color" style="background:#00306B"></span><strong>Azul profundo</strong><code>#00306B</code></div>
+            <div class="swatch"><span class="swatch-color" style="background:#F4E01E"></span><strong>Amarelo</strong><code>#F4E01E</code></div>
+            <div class="swatch"><span class="swatch-color" style="background:#00A3E0"></span><strong>Azul claro</strong><code>#00A3E0</code></div>
+            <div class="swatch"><span class="swatch-color" style="background:#F9F6EE"></span><strong>Areia</strong><code>#F9F6EE</code></div>
+          </div>
+        </div>
+        <div class="typography">
+          <h3 class="section-heading">Tipografia e hierarquia</h3>
+          <div class="font-samples">
+            <article class="font-card font-card--display">
+              <span class="font-sample" aria-hidden="true">Ag</span>
+              <strong>Fredoka</strong>
+              <p>Títulos e chamadas com personalidade.</p>
+            </article>
+            <article class="font-card font-card--body">
+              <span class="font-sample" aria-hidden="true">Ag</span>
+              <strong>Quicksand</strong>
+              <p>Textos e informações para leitura confortável.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="experience-panel" aria-label="Aplicação da identidade e princípios de experiência">
+        <figure class="site-preview">
+          <img src="../assets/user_photos/site-institucional.png" alt="Prévia do site da Formiguinhas da Praia com navegação, chamada para voluntários e ações">
+          <figcaption>Identidade aplicada ao site institucional</figcaption>
+        </figure>
+        <div class="ux-list">
+          <article class="ux-card">
+            <span class="ux-number" aria-hidden="true">01</span>
+            <div><strong>Hierarquia clara</strong><p>Chamadas e ações principais fáceis de localizar.</p></div>
+          </article>
+          <article class="ux-card">
+            <span class="ux-number" aria-hidden="true">02</span>
+            <div><strong>Consistência</strong><p>Cores e componentes ajudam a reconhecer padrões.</p></div>
+          </article>
+          <article class="ux-card">
+            <span class="ux-number" aria-hidden="true">03</span>
+            <div><strong>Acessibilidade</strong><p>Contraste, foco visível e mensagens que não dependem só de cor.</p></div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+  <nav class="slide-navigation" aria-label="Navegação da apresentação">
+    <a class="slide-nav-arrow" href="05_site.html" aria-label="Slide anterior" title="Slide anterior">←</a>
+    <a class="slide-nav-arrow" href="07_arquitetura.html" aria-label="Próximo slide" title="Próximo slide">→</a>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      padding: 46px 64px;
+      color: #00306B;
+      background: #F9F6EE;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Quicksand', sans-serif;
+    }
+    h2 {
+      margin-bottom: 24px;
+      color: #0058B9;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 46px;
+      line-height: 1.1;
+    }
+    .main-cols {
+      display: grid;
+      min-height: 0;
+      flex: 1;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+    }
+    .pub-card {
+      min-width: 0;
+      padding: 28px;
+      border-radius: 22px;
+      color: #F9F6EE;
+      background: #00306B;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .pub-card h3 {
+      font-family: 'Fredoka', sans-serif;
+      color: #F4E01E;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .pub-card p { font-size: 17px; line-height: 1.45; }
+    .pub-card--deployment { justify-content: center; }
+    .deployment-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 6px;
+      list-style: none;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+    .deployment-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .deployment-list li::before {
+      content: "✓";
+      flex: 0 0 auto;
+      color: #F4E01E;
+      font-weight: 700;
+    }
+    .domain-box {
+      background: rgba(255,255,255,0.1);
+      padding: 14px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 16px;
+      text-align: center;
+      color: #8EDFFF;
+      overflow-wrap: anywhere;
+    }
+    .publication-side {
+      display: grid;
+      min-height: 0;
+      grid-template-rows: auto 1fr;
+      gap: 14px;
+    }
+    .pub-card--qr {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .pub-card--qr h3 { margin-bottom: 7px; }
+    .pub-card--qr p { margin: 0; font-size: 15px; }
+    .qr-link {
+      display: block;
+      flex: 0 0 142px;
+      padding: 8px;
+      border-radius: 14px;
+      background: #FFFFFF;
+    }
+    .qr-link img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .verification {
+      padding: 20px 24px;
+      border: 1px solid #D9E2EC;
+      border-radius: 20px;
+      background: #FFFFFF;
+    }
+    .verification h3 {
+      margin-bottom: 12px;
+      color: #00306B;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 20px;
+    }
+    .test-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .test-item {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+    }
+    .test-item span {
+      background: #E8F5ED;
+      color: #17653A;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .test-item strong { display: block; color: #00306B; font-size: 14px; }
+    .test-item p { margin-top: 2px; color: #52657C; font-size: 12px; line-height: 1.35; }
+  </style>
+  <link href="../css/navegacao.css" rel="stylesheet">
+  <link href="../css/apresentacao-responsiva.css" rel="stylesheet">
+</head>
+<body><div class="slide-container">
+    <h2>Da implementação à aplicação publicada</h2>
+    <div class="main-cols">
+    <article class="pub-card pub-card--deployment">
+        <h3>Publicação na AWS</h3>
+        <p>Aplicação Django publicada via <strong>Elastic Beanstalk</strong>.</p>
+        <div class="domain-box">formiguinhas.carolribeiro.dev.br</div>
+      <ul class="deployment-list">
+        <li>HTTPS e certificado digital configurados.</li>
+        <li>Variáveis de ambiente para configuração da aplicação.</li>
+        <li>Arquivos estáticos servidos com WhiteNoise/S3.</li>
+        </ul>
+    </article>
+    <div class="publication-side">
+      <article class="pub-card pub-card--qr">
+        <div>
+          <h3>Acesse o site</h3>
+          <p>Leia o QR Code para conhecer a plataforma.</p>
+        </div>
+        <a class="qr-link" href="https://formiguinhas.carolribeiro.dev.br" target="_blank" rel="noopener noreferrer" aria-label="Abrir o site Formiguinhas da Praia em nova aba">
+          <img src="../assets/user_photos/qrcode.png" alt="QR Code para abrir o site Formiguinhas da Praia">
+        </a>
+      </article>
+      <section class="verification" aria-label="Verificações realizadas">
+        <h3>O que foi verificado</h3>
+      <ul class="test-list">
+        <li class="test-item">
+          <span>✔</span>
+          <div>
+            <strong>Testes de Fluxo</strong>
+            <p>Cadastros e persistência dos dados.</p>
+          </div>
+        </li>
+        <li class="test-item">
+          <span>✔</span>
+          <div>
+            <strong>Compatibilidade</strong>
+            <p>Execução em ambiente local e na nuvem.</p>
+          </div>
+        </li>
+        <li class="test-item">
+          <span>✔</span>
+          <div>
+            <strong>Configuração segura</strong>
+            <p>Fluxos administrativos restritos e HTTPS habilitado.</p>
+          </div>
+        </li>
+      </ul>
+      </section>
+    </div>
+  </div>
+</div>
+  <nav class="slide-navigation" aria-label="Navegação da apresentação">
+    <a class="slide-nav-arrow" href="10_demonstracao.html" aria-label="Slide anterior" title="Slide anterior">←</a>
+    <a class="slide-nav-arrow" href="12_encerramento.html" aria-label="Próximo slide" title="Próximo slide">→</a>
+  </nav>
+</body>
+</html>

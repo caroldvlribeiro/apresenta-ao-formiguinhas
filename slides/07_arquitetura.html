@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      padding: 42px 64px;
+      background: #00306B;
+      color: #F9F6EE;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-family: 'Quicksand', sans-serif;
+      overflow: hidden;
+    }
+    .arch-heading { flex: 0 0 auto; }
+    .eyebrow {
+      margin-bottom: 5px;
+      color: #00A3E0;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin-bottom: 7px;
+      color: #F4E01E;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 43px;
+      line-height: 1.08;
+    }
+    .intro { color: rgba(249,246,238,.84); font-size: 17px; }
+    .arch-flow {
+      display: grid;
+      flex: 1;
+      min-height: 0;
+      grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1.15fr) 44px minmax(0, 1fr);
+      align-items: center;
+      gap: 10px;
+    }
+    .node {
+      min-width: 0;
+      min-height: 222px;
+      padding: 24px 20px;
+      border: 1px solid rgba(0,163,224,.42);
+      border-radius: 22px;
+      background: linear-gradient(155deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 13px;
+      box-shadow: 0 14px 32px rgba(0,0,0,.12);
+    }
+    .node i {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      place-items: center;
+      border: 1px solid rgba(0,163,224,.35);
+      border-radius: 16px;
+      color: #F4E01E;
+      background: rgba(0,163,224,.14);
+      font-size: 24px;
+    }
+    .node-label { color: #8EDFFF; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .node-text strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #F9F6EE;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px;
+    }
+    .node-text p {
+      color: rgba(249,246,238,.82);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .flow-arrow {
+      display: grid;
+      place-items: center;
+      color: #B7A5FF;
+      font-size: 31px;
+      font-weight: 700;
+    }
+    .db-row {
+      display: grid;
+      gap: 9px;
+      width: 100%;
+    }
+    .db-node {
+      display: grid;
+      min-height: 0;
+      grid-template-columns: 38px minmax(0, 1fr);
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      border-color: rgba(183,165,255,.48);
+      border-radius: 14px;
+      background: rgba(118,87,203,.13);
+      box-shadow: none;
+    }
+    .db-node i { width: 38px; height: 38px; border: 0; border-radius: 11px; background: rgba(118,87,203,.25); font-size: 16px; }
+    .db-node .node-text strong { margin-bottom: 2px; font-size: 16px; }
+    .db-node .node-text p { font-size: 11px; }
+    .infra {
+      display: flex;
+      min-height: 74px;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 20px;
+      border: 1px solid rgba(244,224,30,.55);
+      border-radius: 17px;
+      background: rgba(244,224,30,.08);
+    }
+    .infra i {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      place-items: center;
+      border-radius: 13px;
+      color: #F4E01E;
+      background: rgba(244,224,30,.13);
+      font-size: 19px;
+    }
+    .infra strong { display: block; margin-bottom: 3px; color: #F4E01E; font-family: 'Fredoka', sans-serif; font-size: 17px; }
+    .infra p { color: rgba(249,246,238,.84); font-size: 13px; }
+    @media (max-width: 900px) {
+      .slide-container { height: auto; min-height: 100vh; }
+      .arch-flow { grid-template-columns: minmax(0, 1fr); }
+      .node { min-height: 0; }
+      .flow-arrow { transform: rotate(90deg); }
+      .infra { margin-top: 8px; }
+    }
+    @media (max-width: 560px) {
+      .arch-flow { gap: 8px; }
+      .node { padding: 18px; }
+      h2 { font-size: 32px; }
+    }
+  </style>
+  <link href="../css/navegacao.css" rel="stylesheet">
+  <link href="../css/apresentacao-responsiva.css" rel="stylesheet">
+</head>
+<body>
+  <div class="slide-container">
+    <header class="arch-heading">
+      <p class="eyebrow">Por trás da plataforma</p>
+      <h2>Como as partes do sistema se conectam</h2>
+      <p class="intro">Uma visão simples do caminho entre a pessoa usuária, as regras da aplicação e os dados.</p>
+    </header>
+    <div class="arch-flow">
+      <div class="node">
+        <i aria-hidden="true">◎</i>
+        <span class="node-label">Camada de interface</span>
+        <div class="node-text">
+          <strong>Frontend</strong>
+          <p>A interface que a pessoa acessa, construída com HTML, CSS, JavaScript e templates Django.</p>
+        </div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="node">
+        <i aria-hidden="true">⚙</i>
+        <span class="node-label">Camada de aplicação</span>
+        <div class="node-text">
+          <strong>Backend · Django</strong>
+          <p>Processa as solicitações, aplica as regras de negócio e coordena o acesso aos dados.</p>
+        </div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="db-row">
+        <div class="node db-node">
+          <i aria-hidden="true">▤</i>
+          <div class="node-text">
+            <strong>PostgreSQL</strong>
+            <p>Dados relacionais</p>
+          </div>
+        </div>
+        <div class="node db-node">
+          <i aria-hidden="true">▦</i>
+          <div class="node-text">
+            <strong>MongoDB</strong>
+            <p>Dados documentais</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="infra">
+        <i aria-hidden="true">☁</i>
+        <div class="node-text">
+          <strong>Infraestrutura em nuvem</strong>
+          <p>AWS Elastic Beanstalk hospeda e disponibiliza a aplicação.</p>
+        </div>
+    </div>
+  </div>
+  <nav class="slide-navigation" aria-label="Navegação da apresentação">
+    <a class="slide-nav-arrow" href="06_identidade_ux.html" aria-label="Slide anterior" title="Slide anterior">←</a>
+    <a class="slide-nav-arrow" href="08_bancos.html" aria-label="Próximo slide" title="Próximo slide">→</a>
+  </nav>
+</body>
+</html>

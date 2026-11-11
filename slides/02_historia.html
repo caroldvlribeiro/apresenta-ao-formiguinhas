@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      background: #F9F6EE;
+      color: #00306B;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Quicksand', sans-serif;
+      padding: 42px 64px;
+    }
+    h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 44px;
+      line-height: 1.1;
+      color: #0058B9;
+      margin-bottom: 24px;
+      border-left: 8px solid #F4E01E;
+      padding-left: 20px;
+    }
+    .main-content { display: grid; grid-template-columns: 1fr 0.88fr; gap: 40px; flex: 1; min-height: 0; }
+    .text-block { display: flex; flex-direction: column; justify-content: space-between; min-height: 0; }
+    .narrative { font-size: 21px; line-height: 1.4; color: #00306B; }
+    .narrative p { margin-bottom: 16px; }
+    .highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+    .highlight-card {
+      background: #0058B9;
+      color: #FFFFFF;
+      padding: 16px;
+      border-radius: 14px;
+      text-align: center;
+      font-size: 18px;
+      min-height: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .highlight-card strong { display: block; font-family: 'Fredoka', sans-serif; font-size: 20px; color: #F4E01E; margin-bottom: 5px; }
+    figure.image-block {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      background: #00306B;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .image-block img { width: 100%; height: 0; flex: 1 1 0; min-height: 0; object-fit: cover; display: block; }
+    figcaption { min-height: 58px; padding: 16px; color: #FFFFFF; font-size: 18px; font-weight: 700; line-height: 1.25; }
+  </style>
+  <link href="../css/navegacao.css" rel="stylesheet">
+  <link href="../css/apresentacao-responsiva.css" rel="stylesheet">
+</head>
+<body>
+  <div class="slide-container">
+    <h2>De um copo plástico a uma grande transformação</h2>
+    <div class="main-content">
+      <div class="text-block">
+        <div class="narrative">
+          <p>Em abril de 2022, Alessandra Campos encontrou um copo plástico na areia do Canto do Forte, em Praia Grande.</p>
+          <p>Uma atitude individual despertou o interesse de outras pessoas, que passaram a participar das ações de limpeza.</p>
+          <p>Assim surgiu a <strong>Formiguinhas da Praia</strong>, dedicada à preservação ambiental e à mobilização de voluntários.</p>
+        </div>
+        <div class="highlights">
+          <div class="highlight-card"><strong>Abril de 2022</strong>Início da iniciativa</div>
+          <div class="highlight-card"><strong>Canto do Forte</strong>Local de origem</div>
+          <div class="highlight-card"><strong>Mobilização</strong>Crescimento coletivo</div>
+          <div class="highlight-card"><strong>Preservação</strong>Propósito da ONG</div>
+        </div>
+      </div>
+      <figure class="image-block">
+        <img src="../assets/user_photos/alessandra.png" alt="Alessandra Campos em atividade da ONG">
+        <figcaption>Alessandra Campos — fundadora e administradora da ONG</figcaption>
+      </figure>
+    </div>
+  </div>
+  <nav class="slide-navigation" aria-label="Navegação da apresentação">
+    <a class="slide-nav-arrow" href="01_capa.html" aria-label="Slide anterior" title="Slide anterior">←</a>
+    <a class="slide-nav-arrow" href="03_problema_personas.html" aria-label="Próximo slide" title="Próximo slide">→</a>
+  </nav>
+</body>
+</html>

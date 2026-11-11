@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #00306B;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Quicksand', sans-serif;
+      padding: 50px 70px;
+    }
+    h2 { font-family: 'Fredoka', sans-serif; font-size: 54px; color: #F4E01E; margin-bottom: 30px; }
+    .layout { display: grid; grid-template-columns: 2.2fr 1fr; gap: 35px; flex: 1; min-height: 0; }
+    .hero-mockup { display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+    .label { font-size: 22px; color: #FFFFFF; font-weight: 700; }
+    .hero-image {
+      width: 100%;
+      flex: 1;
+      min-height: 360px;
+      object-fit: contain;
+      background: #092850;
+      border: 3px solid #00A3E0;
+      border-radius: 16px;
+    }
+    .side-info { display: flex; flex-direction: column; gap: 24px; justify-content: center; }
+    .info-card { background: #0058B9; padding: 28px; border-radius: 18px; border-left: 8px solid #F4E01E; }
+    .info-card strong { display: block; font-family: 'Fredoka', sans-serif; font-size: 27px; color: #FFFFFF; margin-bottom: 12px; }
+    .info-card p { font-size: 21px; line-height: 1.4; color: #FFFFFF; }
+  </style>
+  <link href="../css/navegacao.css" rel="stylesheet">
+  <link href="../css/apresentacao-responsiva.css" rel="stylesheet">
+</head>
+<body>
+  <div class="slide-container">
+    <h2>A ONG mais perto da comunidade</h2>
+    <div class="layout">
+      <div class="hero-mockup">
+        <p class="label">Página inicial do site institucional</p>
+        <img class="hero-image" src="../assets/user_photos/site-institucional.png" alt="Captura real da página inicial do site Formiguinhas da Praia">
+      </div>
+      <div class="side-info">
+        <div class="info-card">
+          <strong>Conteúdo dinâmico</strong>
+          <p>Ações, praias e galeria são seções dinâmicas conectadas ao sistema interno.</p>
+        </div>
+        <div class="info-card">
+          <strong>Presença pública</strong>
+          <p>O site apresenta a ONG e aproxima suas atividades da comunidade.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="slide-navigation" aria-label="Navegação da apresentação">
+    <a class="slide-nav-arrow" href="04_solucao_mvp.html" aria-label="Slide anterior" title="Slide anterior">←</a>
+    <a class="slide-nav-arrow" href="06_identidade_ux.html" aria-label="Próximo slide" title="Próximo slide">→</a>
+  </nav>
+</body>
+</html>

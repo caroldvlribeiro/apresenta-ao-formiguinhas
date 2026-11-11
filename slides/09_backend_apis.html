@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #00306B;
+      color: #F9F6EE;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Quicksand', sans-serif;
+      padding: 60px 80px;
+    }
+    h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 48px;
+      color: #F4E01E;
+      margin-bottom: 30px;
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      flex: 1;
+    }
+    .tech-group {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 25px;
+      border: 1px solid rgba(0, 163, 224, 0.3);
+    }
+    .tech-group h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 20px;
+      color: #00A3E0;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tech-list {
+      list-style: none;
+      font-size: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tech-item {
+      background: rgba(255,255,255,0.1);
+      padding: 6px 12px;
+      border-radius: 5px;
+    }
+    .api-confirm {
+      grid-column: 1 / -1;
+      background: #7657CB;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+  <link href="../css/navegacao.css" rel="stylesheet">
+  <link href="../css/apresentacao-responsiva.css" rel="stylesheet">
+</head>
+<body>
+  <div class="slide-container">
+    <h2>As tecnologias por trás das funcionalidades</h2>
+    <div class="tech-grid">
+      <div class="tech-group">
+        <h3>🚀 Backend & Lógica</h3>
+        <div class="tech-list">
+          <span class="tech-item">Python 3</span>
+          <span class="tech-item">Django 5.2</span>
+          <span class="tech-item">python-dotenv</span>
+          <span class="tech-item">Gunicorn</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h3>💾 Persistência</h3>
+        <div class="tech-list">
+          <span class="tech-item">psycopg2-binary</span>
+          <span class="tech-item">PyMongo</span>
+          <span class="tech-item">dj-database-url</span>
+          <span class="tech-item">dnspython</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h3>📊 Processamento</h3>
+        <div class="tech-list">
+          <span class="tech-item">Pillow (Imagens)</span>
+          <span class="tech-item">openpyxl (Excel)</span>
+          <span class="tech-item">ReportLab (PDF)</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h3>☁️ Infraestrutura</h3>
+        <div class="tech-list">
+          <span class="tech-item">AWS Boto3</span>
+          <span class="tech-item">django-storages</span>
+          <span class="tech-item">WhiteNoise</span>
+          <span class="tech-item">AWS Elastic Beanstalk</span>
+        </div>
+      </div>
+      <div class="api-confirm">
+        [CONFIRMAR APIs UTILIZADAS: Inserir nome e finalidade das APIs externas integradas]
+      </div>
+    </div>
+  </div>
+  <nav class="slide-navigation" aria-label="Navegação da apresentação">
+    <a class="slide-nav-arrow" href="08_bancos.html" aria-label="Slide anterior" title="Slide anterior">←</a>
+    <a class="slide-nav-arrow" href="10_demonstracao.html" aria-label="Próximo slide" title="Próximo slide">→</a>
+  </nav>
+</body>
+</html>

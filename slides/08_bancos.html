@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      background: #F9F6EE;
+      color: #00306B;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Quicksand', sans-serif;
+      padding: 60px 80px;
+    }
+    h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 48px;
+      color: #0058B9;
+      margin-bottom: 40px;
+    }
+    .db-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+    .db-col {
+      background: #fff;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .db-col h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 28px;
+      color: #00306B;
+      border-bottom: 4px solid #F4E01E;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .db-col ul {
+      list-style: none;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .db-col li::before {
+      content: '✔';
+      color: #0058B9;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    .highlight-box {
+      margin-top: 40px;
+      background: #00306B;
+      color: #F9F6EE;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .highlight-box strong {
+      color: #F4E01E;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 20px;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .technical-warning {
+      font-size: 14px;
+      color: #7657CB;
+      margin-top: 15px;
+      text-align: center;
+    }
+  </style>
+  <link href="../css/navegacao.css" rel="stylesheet">
+  <link href="../css/apresentacao-responsiva.css" rel="stylesheet">
+</head>
+<body>
+  <div class="slide-container">
+    <h2>Dois modelos de dados, uma aplicação integrada</h2>
+    <div class="db-comparison">
+      <div class="db-col">
+        <h3>PostgreSQL (Relacional)</h3>
+        <ul>
+          <li>Dados estruturados e complexos.</li>
+          <li>Relacionamentos e integridade.</li>
+          <li>Integração nativa com Django ORM.</li>
+          <li>Driver: psycopg2-binary.</li>
+          <li>Consistência de registros críticos.</li>
+        </ul>
+      </div>
+      <div class="db-col">
+        <h3>MongoDB (Documental)</h3>
+        <ul>
+          <li>Não relacional e flexível.</li>
+          <li>Armazenamento em documentos BSON.</li>
+          <li>Comunicação direta via PyMongo.</li>
+          <li>Agilidade para estruturas dinâmicas.</li>
+          <li>Alta escalabilidade de leitura.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <strong>Persistência Dual</strong>
+      A aplicação foi preparada para gravar informações nos dois modelos, aproveitando o melhor de cada arquitetura de dados.
+    </div>
+    <p class="technical-warning">Nota Técnica: A consistência dual é tratada na camada de aplicação, sem dependência de transações atômicas entre os bancos.</p>
+  </div>
+  <nav class="slide-navigation" aria-label="Navegação da apresentação">
+    <a class="slide-nav-arrow" href="07_arquitetura.html" aria-label="Slide anterior" title="Slide anterior">←</a>
+    <a class="slide-nav-arrow" href="09_backend_apis.html" aria-label="Próximo slide" title="Próximo slide">→</a>
+  </nav>
+</body>
+</html>
