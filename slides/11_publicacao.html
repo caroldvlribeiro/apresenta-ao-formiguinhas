@@ -146,19 +146,47 @@
   <link href="../css/navegacao.css" rel="stylesheet">
   <link href="../css/apresentacao-responsiva.css" rel="stylesheet">
 </head>
-<body><div class="slide-container">
+<body><div class="slide-container publication-slide">
     <h2>Da implementação à aplicação publicada</h2>
-    <div class="main-cols">
-    <article class="pub-card pub-card--deployment">
+    <div class="main-cols publication-layout">
+    <div class="publication-deployment">
+      <article class="pub-card pub-card--deployment">
         <h3>Publicação na AWS</h3>
         <p>Aplicação Django publicada via <strong>Elastic Beanstalk</strong>.</p>
         <div class="domain-box">formiguinhas.carolribeiro.dev.br</div>
-      <ul class="deployment-list">
-        <li>HTTPS e certificado digital configurados.</li>
-        <li>Variáveis de ambiente para configuração da aplicação.</li>
-        <li>Arquivos estáticos servidos com WhiteNoise/S3.</li>
+        <ul class="deployment-list">
+          <li>HTTPS e certificado digital configurados.</li>
+          <li>Variáveis de ambiente para configuração da aplicação.</li>
+          <li>Arquivos estáticos servidos com WhiteNoise/S3.</li>
         </ul>
-    </article>
+      </article>
+      <section class="verification" aria-label="Verificações realizadas">
+        <h3>O que foi verificado</h3>
+        <ul class="test-list">
+          <li class="test-item">
+            <span>✔</span>
+            <div>
+              <strong>Testes de Fluxo</strong>
+              <p>Cadastros e persistência dos dados.</p>
+            </div>
+          </li>
+          <li class="test-item">
+            <span>✔</span>
+            <div>
+              <strong>Compatibilidade</strong>
+              <p>Execução em ambiente local e na nuvem.</p>
+            </div>
+          </li>
+          <li class="test-item">
+            <span>✔</span>
+            <div>
+              <strong>Configuração segura</strong>
+              <p>Fluxos administrativos restritos e HTTPS habilitado.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
     <div class="publication-side">
       <article class="pub-card pub-card--qr">
         <div>
@@ -169,32 +197,7 @@
           <img src="../assets/user_photos/qrcode.png" alt="QR Code para abrir o site Formiguinhas da Praia">
         </a>
       </article>
-      <section class="verification" aria-label="Verificações realizadas">
-        <h3>O que foi verificado</h3>
-      <ul class="test-list">
-        <li class="test-item">
-          <span>✔</span>
-          <div>
-            <strong>Testes de Fluxo</strong>
-            <p>Cadastros e persistência dos dados.</p>
-          </div>
-        </li>
-        <li class="test-item">
-          <span>✔</span>
-          <div>
-            <strong>Compatibilidade</strong>
-            <p>Execução em ambiente local e na nuvem.</p>
-          </div>
-        </li>
-        <li class="test-item">
-          <span>✔</span>
-          <div>
-            <strong>Configuração segura</strong>
-            <p>Fluxos administrativos restritos e HTTPS habilitado.</p>
-          </div>
-        </li>
-      </ul>
-      </section>
+    </div>
     </div>
   </div>
 </div>

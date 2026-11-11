@@ -3,62 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#00306b">
-  <meta http-equiv="refresh" content="0; url=slides/01_capa.html">
+  <meta name="theme-color" content="#06182b">
   <title>Formiguinhas da Praia — Apresentação</title>
   <style>
-    :root {
-      color-scheme: light;
-      font-family: "Segoe UI", sans-serif;
-      color: #0b1e3d;
-      background: #f9f6ee;
-    }
-
     * { box-sizing: border-box; }
 
+    html,
     body {
-      display: grid;
-      min-height: 100vh;
+      width: 100%;
+      height: 100%;
       margin: 0;
-      padding: 24px;
-      place-items: center;
+      overflow: hidden;
+      background: #06182b;
     }
 
-    main {
-      width: min(100%, 560px);
-      padding: 36px;
-      border: 1px solid #dfe6ef;
-      border-radius: 20px;
-      background: #fff;
-      box-shadow: 0 16px 48px rgba(0, 48, 107, .12);
-      text-align: center;
+    .presentation {
+      width: 100%;
+      height: 100%;
     }
 
-    h1 { margin: 0 0 10px; color: #00306b; font-size: clamp(1.7rem, 6vw, 2.4rem); }
-    p { color: #52657c; line-height: 1.55; }
-
-    a {
-      display: inline-flex;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
-      margin-top: 12px;
-      padding: 0 22px;
-      border-radius: 12px;
-      color: #00306b;
-      background: #f4e01e;
-      font-weight: 800;
-      text-decoration: none;
+    .presentation-frame {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
-
-    a:focus-visible { outline: 3px solid #005ed1; outline-offset: 3px; }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Formiguinhas da Praia</h1>
-    <p>A apresentação está sendo aberta. Se não iniciar automaticamente, use o botão abaixo.</p>
-    <a href="slides/01_capa.html">Abrir apresentação</a>
+  <main class="presentation" aria-label="Apresentação Formiguinhas da Praia" tabindex="-1">
+    <iframe
+      class="presentation-frame"
+      id="presentation-frame"
+      src="slides/01_capa.html"
+      title="Apresentação Formiguinhas da Praia"
+      allowfullscreen>
+      <p>Seu navegador não conseguiu abrir a apresentação. <a href="slides/01_capa.html">Abrir o primeiro slide</a>.</p>
+    </iframe>
   </main>
+  <script>
+    const slideFrame = document.getElementById('presentation-frame');
+    const presentation = document.querySelector('.presentation');
+    const slidePaths = [
+      'slides/01_capa.html',
+      'slides/02_historia.html',
+      'slides/03_problema_personas.html',
+      'slides/04_solucao_mvp.html',
+      'slides/05_site.html',
+      'slides/06_identidade_ux.html',
+      'slides/07_arquitetura.html',
+      'slides/08_bancos.html',
+      'slides/09_backend_apis.html',
+      'slides/10_demonstracao.html',
+      'slides/11_publicacao.html',
+      'slides/12_encerramento.html'
+    ];
+    let currentSlideIndex = 0;
+
+    function navigateWithArrow(event) {
+      const step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+
+      if (step === 0) return;
+      event.preventDefault();
+
+      const nextSlideIndex = currentSlideIndex + step;
+      if (nextSlideIndex < 0 || nextSlideIndex >= slidePaths.length) return;
+
+      currentSlideIndex = nextSlideIndex;
+      presentation.focus({ preventScroll: true });
+      slideFrame.src = slidePaths[currentSlideIndex];
+    }
+
+    document.addEventListener('keydown', navigateWithArrow);
+    slideFrame.addEventListener('load', () => {
+      const slideDocument = slideFrame.contentDocument;
+      if (!slideDocument) return;
+
+      const slidePath = new URL(slideFrame.contentWindow.location.href).pathname;
+      const loadedSlideIndex = slidePaths.findIndex(path => slidePath.endsWith(path));
+      if (loadedSlideIndex >= 0) currentSlideIndex = loadedSlideIndex;
+
+      slideDocument.addEventListener('keydown', navigateWithArrow);
+      slideDocument.querySelectorAll('.slide-navigation a').forEach(link => {
+        link.addEventListener('click', () => presentation.focus({ preventScroll: true }));
+      });
+    });
+  </script>
 </body>
 </html>
